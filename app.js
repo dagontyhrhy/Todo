@@ -2,13 +2,7 @@ angular.module( 'Todos',[])
   .service('Services',function(){
     var self = this
 
-<<<<<<< HEAD
-    self.contacts = [
-      { fullname: 'Narez Jaroenphum', nickname: 'Ice', phone: '087-xxx-xxxx'},
-      { fullname: 'Somchai Tungwinyoo', nickname: 'Zong', phone: '082-xxx-xxxx'},
-      { fullname: 'Veerasak Supakrit', nickname: 'Good', phone: '083-xxx-xxxx'}
-    ]
-=======
+
     self.Todo = []
 
     self.list = function() {return self.Todo}
@@ -35,4 +29,3 @@ angular.module( 'Todos',[])
 
     function resetForm(){$scope.title =''}
 })
->>>>>>> 98f05a7ffd227295d4bb4556597d5931463c90b7
