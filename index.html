@@ -4,29 +4,35 @@
     <meta charset="utf-8">
     <title>TODO APP</title>
       <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body {
+        background-color:Darkslategray
+        !important;
+      }
+      </style>
   </head>
   <br><br>
-  <body bgcolor="#00FF00">
+  <body>
     <div class ="container" >
     <div ng-controller="AddMessageController">
       <center><form>
         <div>
         <center><div class="form-group">
-          <h1><label for="Todoapp"><font face="Lucida Console"><FONT COLOR=#FF0000>TODO</font></label></FONT></h1>
+          <h1><label for="Todoapp"><font face="Lucida Console"><FONT COLOR=#DCDCDC>TODO</font></label></FONT></h1>
           <input type="text" class="form-control input-lg" id = "Todoapp" ng-model="title" placeholder="What is to be done ?"><br>
         </div>
-        <button ng-click="save()" type="button" class="btn btn-primary" name="button">Add</button></center>
+        <button ng-click="save()" type="button" class="btn btn-warning" name="button">Add</button></center>
         </div>
       </form>
     </div>
 
         <div ng-controller="ListMessageController">
-          <table class="table table-striped" >
+          <table class="table table-condensed" >
           <thead>
 
-            <th width="20%">Checkbox</th>
-            <th>Message</th>
-            <th width="20%">Status</th>
+            <th width="20%"><h4><FONT COLOR=#ADFF2F>Checkbox</FONT></h4></th>
+            <th><h4><FONT COLOR=#ADFF2F>Message</FONT></h4></th>
+            <th width="20%"><h4><FONT COLOR=#ADFF2F>Status</FONT></h4></th>
 
             <tbody>
             <tr ng-repeat="mess in Todo" >
@@ -35,8 +41,8 @@
                 <label ></label><input type="checkbox" ng-model="done" ng-true-value="'Complete'" ng-false-value="''">
                 </div>
               </td>
-              <td>{{ mess.title }}</td>
-              <td width="20%">{{ done }}</td>
+              <td><h4><FONT COLOR=#FFFFFF>{{ mess.title }}</FONT></h4></td>
+              <td width="20%"><h4><FONT COLOR=#FFFF00>{{ done }}</FONT></h4></td>
             </tr>
           </tbody>
           </thead>
