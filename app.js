@@ -1,4 +1,4 @@
-angular.module( 'Todos',[])
+angular.module( 'Todoapp',[])
   .service('Services',function(){
     var self = this
 
@@ -21,10 +21,8 @@ angular.module( 'Todos',[])
         var t = {title: $scope.title}
         var c = {done: $scope.done}
         Services.add(t)
-        Services.add(c)
         resetForm()
       }
-
     }
 
     function resetForm(){$scope.title =''}

@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="Todos">
+<html ng-app="Todoapp">
   <head>
     <meta charset="utf-8">
-
-    <title>Bootstraping AngularJS</title>
-
-    <title>Todo</title>
+    <title>TODO APP</title>
       <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <br><br>
-  <body>
+  <body bgcolor="#00FF00">
     <div class ="container" >
     <div ng-controller="AddMessageController">
       <center><form>
         <div>
         <center><div class="form-group">
-          <h1><label for="Todos">Todo</label></h1>
-          <input type="text" class="form-control input-lg" id = "Todos" ng-model="title" placeholder="What Is To Be Done ?"><br>
+          <h1><label for="Todoapp"><font face="Lucida Console"><FONT COLOR=#FF0000>TODO</font></label></FONT></h1>
+          <input type="text" class="form-control input-lg" id = "Todoapp" ng-model="title" placeholder="What is to be done ?"><br>
         </div>
-
-        <button ng-click="save()" type="button" class="btn btn-danger" name="button">Add</button></center>
+        <button ng-click="save()" type="button" class="btn btn-primary" name="button">Add</button></center>
         </div>
       </form>
     </div>
 
         <div ng-controller="ListMessageController">
-          <table class="table table-hover" >
+          <table class="table table-striped" >
           <thead>
+
             <th width="20%">Checkbox</th>
             <th>Message</th>
-            <th width="40%">Status</th>
+            <th width="20%">Status</th>
 
             <tbody>
             <tr ng-repeat="mess in Todo" >
@@ -39,7 +36,7 @@
                 </div>
               </td>
               <td>{{ mess.title }}</td>
-              <td width="40%">{{ done }}</td>
+              <td width="20%">{{ done }}</td>
             </tr>
           </tbody>
           </thead>
