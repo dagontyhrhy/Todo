@@ -18,10 +18,10 @@
       <center><form>
         <div>
         <center><div class="form-group">
-          <h1><label for="Todoapp"><font face="Lucida Console"><FONT COLOR=#DCDCDC>TODO</font></label></FONT></h1>
+          <h1><label for="Todoapp"><font face="Lucida Console"><FONT COLOR=#DCDCDC>TODOS</font></label></FONT></h1>
           <input type="text" class="form-control input-lg" id = "Todoapp" ng-model="title" placeholder="What is to be done ?"><br>
         </div>
-        <button ng-click="save()" type="button" class="btn btn-warning" name="button">Add</button></center>
+        <button ng-click="add()" type="button" class="btn btn-warning" name="button">Add Message</button></center>
         </div>
       </form>
     </div>
@@ -35,14 +35,14 @@
             <th width="20%"><h4><FONT COLOR=#ADFF2F>Status</FONT></h4></th>
 
             <tbody>
-            <tr ng-repeat="mess in Todo" >
+            <tr ng-repeat="t in Todo" >
               <td width="20%">
                 <div class="checkbox">
-                <label ></label><input type="checkbox" ng-model="done" ng-true-value="'Complete'" ng-false-value="''">
+                <label ></label><input type="checkbox" ng-model="todoDone"  ng-checked="t.done=== true" ng-click = "Check(t)">
                 </div>
               </td>
-              <td><h4><FONT COLOR=#FFFFFF>{{ mess.title }}</FONT></h4></td>
-              <td width="20%"><h4><FONT COLOR=#FFFF00>{{ done }}</FONT></h4></td>
+              <td><h4><FONT COLOR=#FFFFFF>{{ t.title }}</FONT></h4></td>
+              <td width="20%"><ng-show ng-show="t.done === true"><h4><FONT COLOR=#FFFF00>Complete</FONT></h4></ng-show></td>
             </tr>
           </tbody>
           </thead>
