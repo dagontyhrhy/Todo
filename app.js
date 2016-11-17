@@ -5,7 +5,7 @@ angular.module( 'Todoapp',[])
 
     self.Todo = [{title:'Autsada',done:true},{title:'Tosapol',done:false}];
     self.list = function() {return self.Todo}
-    self.add = function(t) {self.Todo.push(t)}
+    self.save = function(t) {self.Todo.push(t)}
 
 self.Check = function(ti) {
             if (ti.done=== false) {
@@ -24,10 +24,10 @@ self.Check = function(ti) {
 
   .controller('AddMessageController', function($scope, Services){
    $scope.title = '  '
-        $scope.add = function() {
+        $scope.save = function() {
             if ($scope.title !== '  ') {
                 var t = {title: $scope.title,done: false}
-                Services.add(t);
+                Services.save(t);
                 resetForm();
             }
         }
